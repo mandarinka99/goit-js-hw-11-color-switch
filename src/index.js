@@ -13,6 +13,7 @@ const budyNode = document.querySelector('body');
 const btnStartNode = document.querySelector('button[data-action="start"]');
 const btnStopNode = document.querySelector('button[data-action="stop"]');
 let interval;
+const PROMPT_DELAY = 1000;
 
 const randomIntegerFromInterval = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1) + min);
@@ -26,9 +27,8 @@ const changeBackgroundColor = colors => {
 btnStartNode.addEventListener ('click', () => {
   btnStartNode.disabled = true;
   interval = setInterval(() => {
-    console.log("aaaa");
     changeBackgroundColor(colors);
-  }, 1000)
+  }, PROMPT_DELAY);
 });
 
 btnStopNode.addEventListener('click', () => {
